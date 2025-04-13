@@ -12,6 +12,7 @@ import SiteIcon from '@/components/SiteIcon'
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [logoError, setLogoError] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,23 +49,19 @@ const Header = () => {
           <div className="flex items-center justify-between h-24 max-w-full">
             <a href="#home" className="flex items-center">
               <div className="h-16 flex items-center">
-                <Image 
-                  src="/custom-logo.png" 
-                  alt="Focus Global Logo" 
-                  width={160}  
-                  height={60}
-                  className="object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const fallbackIcon = document.getElementById('fallback-icon');
-                    if (fallbackIcon) {
-                      fallbackIcon.style.display = 'block';
-                    }
-                  }}
-                />
-                <div id="fallback-icon" className="hidden">
+                {!logoError ? (
+                  <Image 
+                    src="/custom-logo.png" 
+                    alt="Focus Global Logo" 
+                    width={160}  
+                    height={60}
+                    priority
+                    className="object-contain"
+                    onError={() => setLogoError(true)}
+                  />
+                ) : (
                   <SiteIcon size={70} className="text-primary" />
-                </div>
+                )}
               </div>
             </a>
 

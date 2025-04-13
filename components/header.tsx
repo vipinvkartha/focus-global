@@ -1,24 +1,13 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { 
-  Globe, 
   Menu, 
   X, 
-  ChevronDown, 
-  MapPin,
-  Plane,
-  Ship,
-  FileText
 } from 'lucide-react'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import Image from 'next/image'
+import SiteIcon from '@/components/SiteIcon'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -32,146 +21,128 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const locations = [
-    { label: 'China', href: '/locations/china' },
-    { label: 'USA', href: '/locations/usa' },
-    { label: 'India', href: '/locations/india' },
-    { label: 'Zambia', href: '/locations/zambia' },
-    { label: 'Ghana', href: '/locations/ghana' },
-    { label: 'Thailand', href: '/locations/thailand' },
-    { label: 'Congo', href: '/locations/congo' },
-    { label: 'Dubai', href: '/locations/dubai' },
-  ]
-
-  const services = [
-    { label: 'Sea Freight', href: '/services/sea-freight' },
-    { label: 'Air Freight', href: '/services/air-freight' },
-  ]
+  // Add effect to prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
 
   const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About Us', href: '/about' },
-    { 
-      label: 'Locations', 
-      href: '/locations',
-      isDropdown: true,
-      items: locations 
-    },
-    { 
-      label: 'Freight Services', 
-      href: '/services',
-      isDropdown: true,
-      items: services 
-    },
-    { label: 'Events', href: '/events' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Services', href: '#services' },
+    { label: 'Locations', href: '#locations' },
+    { label: 'FAQ', href: '#faq' },
   ]
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 shadow-md backdrop-blur-sm' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center space-x-2">
-            <Globe className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">Focus Global</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) => (
-              item.isDropdown ? (
-                <DropdownMenu key={item.label}>
-                  <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
-                    {item.label} <ChevronDown className="ml-1 h-4 w-4" />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    {item.items?.map((subItem) => (
-                      <DropdownMenuItem key={subItem.label} asChild>
-                        <Link href={subItem.href} className="w-full">
-                          {subItem.label}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-sm font-medium hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </Link>
-              )
-            ))}
-            <div className="flex items-center space-x-3">
-              <Link href="/quote">
-                <Button variant="outline" size="sm">Get Quote</Button>
-              </Link>
-              <Link href="/track">
-                <Button size="sm">Track Shipment</Button>
-              </Link>
-            </div>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 bg-white shadow-lg rounded-lg mb-4">
-            {navItems.map((item) => (
-              item.isDropdown ? (
-                <div key={item.label} className="py-2">
-                  <div className="flex items-center px-4 text-sm font-medium mb-1">
-                    {item.label}
-                  </div>
-                  <div className="pl-6 space-y-1">
-                    {item.items?.map((subItem) => (
-                      <Link
-                        key={subItem.label}
-                        href={subItem.href}
-                        className="block px-4 py-1 text-sm hover:text-primary transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
-                  </div>
+    <>
+      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 shadow-md backdrop-blur-sm' : 'bg-white'}`}>
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-24 max-w-full">
+            <a href="#home" className="flex items-center">
+              <div className="h-16 flex items-center">
+                <Image 
+                  src="/custom-logo.png" 
+                  alt="Focus Global Logo" 
+                  width={160}  
+                  height={60}
+                  className="object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const fallbackIcon = document.getElementById('fallback-icon');
+                    if (fallbackIcon) {
+                      fallbackIcon.style.display = 'block';
+                    }
+                  }}
+                />
+                <div id="fallback-icon" className="hidden">
+                  <SiteIcon size={70} className="text-primary" />
                 </div>
+              </div>
+            </a>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center">
+              <div className="flex items-center space-x-3 lg:space-x-5">
+                {navItems.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+              <div className="ml-4 flex items-center space-x-2">
+                <a href="#quote">
+                  <Button variant="outline" size="sm" className="whitespace-nowrap">Get Quote</Button>
+                </a>
+                <a href="#track">
+                  <Button size="sm" className="whitespace-nowrap">Track Shipment</Button>
+                </a>
+              </div>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
               ) : (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="block px-4 py-2 text-sm font-medium hover:text-primary transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              )
-            ))}
-            <div className="px-4 pt-3 space-y-2">
-              <Link href="/quote" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="outline" className="w-full">Get Quote</Button>
-              </Link>
-              <Link href="/track" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full">Track Shipment</Button>
-              </Link>
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Navigation Overlay */}
+      {isMobileMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/20 z-30 md:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          
+          {/* Menu */}
+          <div className="fixed top-24 inset-x-0 z-40 md:hidden">
+            <div className="mx-4">
+              <nav className="py-4 bg-white shadow-lg rounded-lg">
+                {navItems.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="block px-4 py-2 text-sm font-medium hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <div className="px-4 pt-3 pb-4 space-y-2">
+                  <a href="#quote" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button variant="outline" className="w-full">Get Quote</Button>
+                  </a>
+                  <a href="#track" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button className="w-full">Track Shipment</Button>
+                  </a>
+                </div>
+              </nav>
             </div>
-          </nav>
-        )}
-      </div>
-    </header>
+          </div>
+        </>
+      )}
+    </>
   )
 }
 

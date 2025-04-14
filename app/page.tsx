@@ -14,7 +14,6 @@ import {
   Clock,
   MapPin
 } from 'lucide-react'
-import TrackingForm from '@/components/TrackingForm'
 import LocationsGrid from '@/components/LocationsGrid'
 import FAQAccordion, { freightFAQs } from '@/components/FAQAccordion'
 import QuoteForm from '@/components/QuoteForm'
@@ -43,11 +42,6 @@ export default function Home() {
             <div className="flex space-x-4">
               <a href="#quote">
                 <Button size="lg">Get a Quote</Button>
-              </a>
-              <a href="#track">
-                <Button size="lg" variant="outline">
-                  Track Shipment
-                </Button>
               </a>
             </div>
           </div>
@@ -86,7 +80,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start">
                   <Check className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span>Door-to-door shipping solutions with real-time tracking</span>
+                  <span>Door-to-door shipping solutions</span>
                 </div>
                 <div className="flex items-start">
                   <Check className="h-5 w-5 text-primary mr-2 mt-1" />
@@ -169,21 +163,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tracking Section */}
-      <section className="py-20" id="track">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Track Your Shipment</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Monitor your shipment in real-time. Get detailed information about the current status, 
-              location, and estimated delivery time of your cargo.
-            </p>
-          </div>
-          
-          <TrackingForm />
-        </div>
-      </section>
-
       {/* Locations Section */}
       <section className="py-20 bg-gray-50" id="locations">
         <div className="container mx-auto px-4">
@@ -251,31 +230,27 @@ export default function Home() {
                 <QuoteForm />
               </div>
             </div>
-            
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h3 className="text-xl font-semibold mb-4">Why Choose Us</h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li>✓ Competitive shipping rates</li>
-                  <li>✓ Global network of carriers and agents</li>
-                  <li>✓ Transparent pricing with no hidden fees</li>
-                  <li>✓ Dedicated account manager</li>
-                  <li>✓ Real-time shipment tracking</li>
-                  <li>✓ Customs clearance expertise</li>
+            <div className="lg:col-span-1">
+              <div className="bg-gray-50 p-8 rounded-lg">
+                <h3 className="text-xl font-bold mb-4">Why Choose Us?</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <Shield className="h-5 w-5 text-primary mr-2 mt-1" />
+                    <span>Secure and reliable shipping solutions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Clock className="h-5 w-5 text-primary mr-2 mt-1" />
+                    <span>Fast and efficient service</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Globe className="h-5 w-5 text-primary mr-2 mt-1" />
+                    <span>Global network coverage</span>
+                  </li>
+                  <li className="flex items-start">
+                    <MapPin className="h-5 w-5 text-primary mr-2 mt-1" />
+                    <span>Door-to-door delivery options</span>
+                  </li>
                 </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="font-medium text-lg mb-2">Need help?</div>
-                <p className="text-gray-600 mb-4">
-                  Our logistics specialists are ready to assist you with any questions about your shipment.
-                </p>
-                <a 
-                  href="tel:+1-555-123-4567" 
-                  className="text-primary hover:text-primary/80 font-medium"
-                >
-                  Call us: +1 (555) 123-4567
-                </a>
               </div>
             </div>
           </div>
@@ -284,29 +259,15 @@ export default function Home() {
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50" id="faq">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <FAQAccordion 
-            faqs={freightFAQs} 
-            title="Frequently Asked Questions"
-            subtitle="Find answers to common questions about our services and operations"
-          />
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-primary py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Ship with Focus Global?
-          </h2>
-          <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Get in touch with our team for a customized shipping solution that meets your needs
-          </p>
-          <a href="#quote">
-            <Button size="lg" variant="secondary">
-              Contact Us <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </a>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Find answers to common questions about our shipping and logistics services
+            </p>
+          </div>
+          
+          <FAQAccordion faqs={freightFAQs} />
         </div>
       </section>
     </>
@@ -315,13 +276,13 @@ export default function Home() {
 
 function ServiceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
-    <Card className="text-center">
-      <CardContent className="pt-6">
-        <div className="inline-flex p-3 rounded-lg bg-primary/10 text-primary mb-4">
-          {icon}
+    <Card>
+      <CardContent className="p-6">
+        <div className="flex flex-col items-center text-center">
+          <div className="mb-4 text-primary">{icon}</div>
+          <h3 className="text-xl font-bold mb-2">{title}</h3>
+          <p className="text-gray-600">{description}</p>
         </div>
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600">{description}</p>
       </CardContent>
     </Card>
   )

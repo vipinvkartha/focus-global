@@ -78,12 +78,9 @@ const Header = () => {
                   </a>
                 ))}
               </div>
-              <div className="ml-4 flex items-center space-x-2">
+              <div className="ml-4">
                 <a href="#quote">
-                  <Button variant="outline" size="sm" className="whitespace-nowrap">Get Quote</Button>
-                </a>
-                <a href="#track">
-                  <Button size="sm" className="whitespace-nowrap">Track Shipment</Button>
+                  <Button size="sm" className="whitespace-nowrap">Get Quote</Button>
                 </a>
               </div>
             </nav>
@@ -126,12 +123,9 @@ const Header = () => {
                     {item.label}
                   </a>
                 ))}
-                <div className="px-4 pt-3 pb-4 space-y-2">
+                <div className="px-4 pt-3 pb-4">
                   <a href="#quote" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button variant="outline" className="w-full">Get Quote</Button>
-                  </a>
-                  <a href="#track" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button className="w-full">Track Shipment</Button>
+                    <Button className="w-full">Get Quote</Button>
                   </a>
                 </div>
               </nav>

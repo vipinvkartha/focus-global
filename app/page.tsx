@@ -153,7 +153,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start">
                   <Check className="h-5 w-5 text-primary mr-2 mt-0.5" />
-                  <span>Minimum goods accepted: 1 CBM</span>
+                  <span>Minimum order value: 1 Lakh INR</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="h-5 w-5 text-primary mr-2 mt-0.5" />

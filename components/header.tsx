@@ -76,7 +76,7 @@ const Header = () => {
                 ))}
               </div>
               <div className="ml-4">
-                <a href="#quote">
+                <a href="https://wa.me/8619548851246" target="_blank" rel="noopener noreferrer">
                   <Button size="sm" className="whitespace-nowrap">Get Quote</Button>
                 </a>
               </div>
@@ -121,7 +121,7 @@ const Header = () => {
                   </a>
                 ))}
                 <div className="px-4 pt-3 pb-4">
-                  <a href="#quote" onClick={() => setIsMobileMenuOpen(false)}>
+                  <a href="https://wa.me/8619548851246" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                     <Button className="w-full">Get Quote</Button>
                   </a>
                 </div>

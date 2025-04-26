@@ -49,50 +49,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="py-20" id="quote">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Get a customized shipping quote tailored to your specific requirements. Fill out the form below and our team will respond promptly.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <div className="lg:col-span-2">
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-                <h3 className="text-2xl font-bold mb-6">Shipping Quote Request</h3>
-                <QuoteForm />
-              </div>
-            </div>
-            <div className="lg:col-span-1">
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Why Choose Us?</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <Shield className="h-5 w-5 text-primary mr-2 mt-1" />
-                    <span>Secure and reliable shipping solutions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Clock className="h-5 w-5 text-primary mr-2 mt-1" />
-                    <span>Fast and efficient service</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Globe className="h-5 w-5 text-primary mr-2 mt-1" />
-                    <span>Global network coverage</span>
-                  </li>
-                  <li className="flex items-start">
-                    <MapPin className="h-5 w-5 text-primary mr-2 mt-1" />
-                    <span>Door-to-door delivery options</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About Section */}
       <section className="py-20" id="about">
         <div className="container mx-auto px-4">
@@ -210,6 +166,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Why Choose Us?</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              We provide exceptional service and value to our clients through our commitment to quality and efficiency
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <li className="flex items-start">
+                  <Shield className="h-6 w-6 text-primary mr-3 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Secure and Reliable</h3>
+                    <p className="text-gray-600">Your cargo is handled with the utmost care and security throughout the journey</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Clock className="h-6 w-6 text-primary mr-3 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Fast and Efficient</h3>
+                    <p className="text-gray-600">Timely delivery with optimized routes and processes</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Globe className="h-6 w-6 text-primary mr-3 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Global Network</h3>
+                    <p className="text-gray-600">Extensive network coverage across major trade routes</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <MapPin className="h-6 w-6 text-primary mr-3 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Door-to-Door Service</h3>
+                    <p className="text-gray-600">Complete logistics solutions from pickup to final delivery</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Locations Section */}
       <section className="py-20 bg-gray-50" id="locations">
         <div className="container mx-auto px-4">
@@ -231,30 +233,6 @@ export default function Home() {
               <p className="text-gray-600">
                 Contact our team for personalized service and competitive rates for your freight needs.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">15K+</div>
-              <div className="text-white/80">Worldwide Clients</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">90+</div>
-              <div className="text-white/80">Countries Served</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">50K+</div>
-              <div className="text-white/80">Shipments Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">12+</div>
-              <div className="text-white/80">Years Experience</div>
             </div>
           </div>
         </div>

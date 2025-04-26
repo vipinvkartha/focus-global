@@ -52,16 +52,18 @@ export default function Home() {
       <section className="py-20" id="about">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Image
-                src="https://images.unsplash.com/photo-1595500403311-00acfc9de97b?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080"
-                alt="Focus Global Operations"
-                width={600}
-                height={400}
-                className="rounded-lg object-cover"
-              />
+            <div className="order-2 lg:order-1 flex items-center justify-center">
+              <div className="relative w-[800px] h-[500px]">
+                <Image
+                  src="/custom-desc.png"
+                  alt="Focus Global Operations"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </div>
-            <div>
+            <div className="order-1 lg:order-2">
               <h2 className="text-3xl font-bold mb-6">FOCUS GLOBAL LIMITED</h2>
               <p className="text-gray-600 mb-6">
                 Focus Global is an international freight forwarding company providing comprehensive freight and logistics 

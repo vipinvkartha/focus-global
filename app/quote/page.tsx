@@ -32,8 +32,8 @@ export default function QuotePage() {
                   <Mail className="h-5 w-5 text-primary mr-3 mt-0.5" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:info@focusglobal.com" className="text-gray-600 hover:text-primary">
-                      info@focusglobal.com
+                    <a href="mailto:info@focusglobaltrading.com" className="text-gray-600 hover:text-primary">
+                      info@focusglobaltrading.com
                     </a>
                   </div>
                 </div>
@@ -43,7 +43,7 @@ export default function QuotePage() {
                   <div>
                     <p className="font-medium">Phone</p>
                     <a href="tel:+1-555-123-4567" className="text-gray-600 hover:text-primary">
-                      +1 (555) 123-4567
+                      +8619548851246
                     </a>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export default function QuotePage() {
                 href="tel:+1-555-123-4567" 
                 className="text-primary hover:text-primary/80 font-medium"
               >
-                Call us: +1 (555) 123-4567
+                Call us: +8619548851246
               </a>
             </div>
           </div>

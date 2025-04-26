@@ -2,12 +2,17 @@
 
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
-import { 
-  Menu, 
-  X, 
-} from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import SiteIcon from '@/components/SiteIcon'
+
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Locations', href: '#locations' },
+  { label: 'FAQ', href: '#faq' },
+]
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -33,14 +38,6 @@ const Header = () => {
       document.body.style.overflow = ''
     }
   }, [isMobileMenuOpen])
-
-  const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Locations', href: '#locations' },
-    { label: 'FAQ', href: '#faq' },
-  ]
 
   return (
     <>

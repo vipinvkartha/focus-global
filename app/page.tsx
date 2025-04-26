@@ -41,8 +41,14 @@ export default function Home() {
               Reliable, efficient, and comprehensive freight forwarding services worldwide
             </p>
             <div className="flex space-x-4">
-              <a href="#quote">
-                <Button size="lg">Get a Quote</Button>
+              <a 
+                href="https://wa.me/8619548851246" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-500 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                <span className="relative z-10">Get a Quote</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </a>
             </div>
           </div>

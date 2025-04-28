@@ -52,7 +52,7 @@ export const freightFAQs = [
   },
   {
     question: "Where are your network offices located?",
-    answer: "We have a global network of offices in China, USA, India, Zambia, Ghana, Thailand, Congo, Dubai, and more locations. We can connect to virtually any destination worldwide."
+    answer: "We have a global network of offices in China, India, Dubai, and more locations. We can connect to virtually any destination worldwide."
   },
   {
     question: "What is door-to-door service?",
@@ -75,19 +75,8 @@ export const freightFAQs = [
     answer: "We check the products, take pictures, videos, examine raw materials, color, design, weight, QTP, packing details, etc. You can be involved in this process to satisfy yourself with all the information."
   },
   {
-    question: "What is the minimum quantity of goods order?",
-    answer: "The minimum is 1 CBM of goods. The minimum value should be USD 1000. However, we can discuss special cases individually."
-  },
-  {
-    question: "How do you count CBM, weight, or convert volume into weight?",
-    answer: (
-      <ul className="list-disc pl-5 space-y-2">
-        <li>For sea shipment: 1 CBM equals 300kg</li>
-        <li>If a shipment is overweight, 300kg is considered as 1 CBM</li>
-        <li>For air cargo: 1 CBM is equivalent to 160kg</li>
-        <li>Heavy weight goods are charged on actual kg, but extra handling charges apply</li>
-      </ul>
-    )
+    question: "What is the minimum order value?",
+    answer: "The minimum value should be INR 1000. However, we can discuss special cases individually."
   },
   {
     question: "What kind of goods are accepted for booking?",

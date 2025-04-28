@@ -17,22 +17,22 @@ const locations: LocationProps[] = [
     slug: 'india'
   },
   {
-    title: 'Dubai',
-    cities: ['DUBAI'],
+    title: 'Middle East',
+    cities: ['DUBAI', 'RIYADH'],
     image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640',
-    slug: 'dubai'
+    slug: 'middle-east'
   },
   {
-    title: 'Australia',
-    cities: ['SYDNEY'],
-    image: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640',
-    slug: 'australia'
+    title: 'Africa',
+    cities: ['AFRICA'],
+    image: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640',
+    slug: 'africa'
   },
   {
-    title: 'Singapore',
-    cities: ['SINGAPORE'],
-    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640',
-    slug: 'singapore'
+    title: 'Jordan',
+    cities: ['AMMAN'],
+    image: 'https://images.unsplash.com/photo-1614772067419-1452cf9aeaa3?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://unsplash.com/photos/a-building-built-into-the-side-of-a-cliff-pxyUkvOcqMM?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640',
+    slug: 'jordan'
   }
 ]
 

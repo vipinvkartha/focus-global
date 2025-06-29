@@ -1,16 +1,15 @@
 {
-    "redirects": [
-      {
-        "source": "/(.*)",
-        "has": [
-          {
-            "type": "host",
-            "value": "focusglobaltrading.com"
-          }
-        ],
-        "destination": "https://www.focusglobaltrading.com/:1",
-        "permanent": true
-      }
-    ]
-  }
-  
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "focusglobaltrading.com"
+        }
+      ],
+      "destination": "https://www.focusglobaltrading.com/$1",
+      "permanent": true
+    }
+  ]
+}
